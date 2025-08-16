@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Eight - Consumer App Studio</title>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #ffffff, #a0a0a0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            color: #a0a0a0;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff, #808080);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            color: #a0a0a0;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            color: #a0a0a0;
+            line-height: 1.5;
+        }
+
+        /* Sections */
+        .section {
+            display: none;
+            min-height: 100vh;
+            padding: 6rem 2rem 2rem;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #ffffff, #808080);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* About Section */
+        .about-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #a0a0a0;
+            margin-bottom: 2rem;
+        }
+
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .app-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .app-card.coming-soon {
+            opacity: 0.6;
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #a6b4ff, #7a6eff);
+            border-radius: 20px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .app-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .app-card p {
+            color: #a0a0a0;
+            line-height: 1.6;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .status-live {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+
+        .status-coming {
+            background: rgba(168, 85, 247, 0.2);
+            color: #a855f7;
+            border: 1px solid rgba(168, 85, 247, 0.3);
+        }
+
+        /* Work With Us Form */
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 1rem;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #a0a0a0;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #a6b4ff, #7a6eff);
+            border: none;
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Studio Eight</div>
+            <ul class="nav-links">
+                <li><a onclick="showSection('home')">Home</a></li>
+                <li><a onclick="showSection('about')">About</a></li>
+                <li><a onclick="showSection('portfolio')">Portfolio</a></li>
+                <li><a onclick="showSection('mvp-service')">Have an App Idea?</a></li>
+                <li><a onclick="showSection('work-with-us')">Work With Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero section active">
+        <div class="hero-content">
+            <h1>Studio Eight</h1>
+            <p>Consumer App Studio</p>
+            <p style="font-size: 1.1rem; margin-top: 2rem;">Crafting meaningful digital experiences that connect with people's daily lives.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">🎯</span>
+                    <h3>Purpose-Driven</h3>
+                    <p>Every app we build solves real problems and enhances daily routines</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">✨</span>
+                    <h3>Thoughtful Design</h3>
+                    <p>Beautiful interfaces that prioritize user experience and simplicity</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🚀</span>
+                    <h3>Innovation First</h3>
+                    <p>Leveraging cutting-edge technology to create next-generation experiences</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Studio Eight</h2>
+            <div class="about-content">
+                <p>We are a consumer app studio focused on creating applications that enhance everyday life. Our approach combines thoughtful design with purposeful technology to build experiences that truly matter to users.</p>
+                <p>At Studio Eight, we believe in the power of simplicity, the importance of user-centered design, and the potential of technology to create positive change in people's daily routines.</p>
+                <p>Our team is dedicated to launching innovative consumer applications that solve real problems and bring joy to millions of users worldwide.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Portfolio</h2>
+            <div class="portfolio-grid">
+                <div class="app-card">
+                    <div class="app-icon" style="background: #F5F0E8; color: #2A2A2A; font-family: serif; font-weight: 500; font-style: italic;">m</div>
+                    <h3>Mantra</h3>
+                    <p>An intelligent journaling app that listens to users and responds with AI-generated mantras. Transform your inner dialogue through mindful reflection and personalized guidance.</p>
+                    <span class="status-badge status-live">Live on App Store</span>
+                </div>
+                
+                <div class="app-card coming-soon">
+                    <div class="app-icon">🌙</div>
+                    <h3>Full Moon</h3>
+                    <span class="status-badge status-coming">Coming Soon</span>
+                </div>
+                
+                <div class="app-card coming-soon">
+                    <div class="app-icon">🧘</div>
+                    <h3>Baby Buddha</h3>
+                    <span class="status-badge status-coming">Coming Soon</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MVP Service Section -->
+    <section id="mvp-service" class="section">
+        <div class="container">
+            <h2 class="section-title">Have an App Idea?</h2>
+            <div class="form-container">
+                <h3 style="text-align: center; margin-bottom: 1rem; color: #ffffff; font-size: 1.8rem;">7-Day MVP Development</h3>
+                <p style="text-align: center; color: #a0a0a0; margin-bottom: 2rem; font-size: 1.1rem;">We'll build your app idea into a working MVP in just 7 days for $499</p>
+                
+                <div style="background: rgba(166, 180, 255, 0.1); border: 1px solid rgba(166, 180, 255, 0.2); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;">
+                    <h4 style="color: #a6b4ff; margin-bottom: 1rem; text-align: center;">What You Get:</h4>
+                    <ul style="color: #ffffff; line-height: 1.8; list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;">✅ Fully functional mobile app prototype</li>
+                        <li style="margin-bottom: 0.5rem;">✅ Professional UI/UX design</li>
+                        <li style="margin-bottom: 0.5rem;">✅ Core features implemented</li>
+                        <li style="margin-bottom: 0.5rem;">✅ Ready for user testing</li>
+                        <li>✅ 7-day delivery guarantee</li>
+                    </ul>
+                </div>
+                
+                <form id="mvp-form">
+                    <div class="form-group">
+                        <label for="mvp-name">Your Name</label>
+                        <input type="text" id="mvp-name" name="name" placeholder="Full name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mvp-email">Email Address</label>
+                        <input type="email" id="mvp-email" name="email" placeholder="your@email.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="app-name">App Name</label>
+                        <input type="text" id="app-name" name="appName" placeholder="What's your app called?" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="app-category">App Category</label>
+                        <select id="app-category" name="category" required>
+                            <option value="">Select category</option>
+                            <option value="social">Social Networking</option>
+                            <option value="productivity">Productivity</option>
+                            <option value="health">Health & Wellness</option>
+                            <option value="finance">Finance</option>
+                            <option value="education">Education</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="business">Business</option>
+                            <option value="lifestyle">Lifestyle</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="app-description">Describe Your App Idea</label>
+                        <textarea id="app-description" name="description" rows="4" placeholder="What problem does your app solve? What are the main features?" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="target-users">Who is your target audience?</label>
+                        <input type="text" id="target-users" name="targetUsers" placeholder="e.g., college students, working professionals, fitness enthusiasts" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="timeline">When do you need this?</label>
+                        <select id="timeline" name="timeline" required>
+                            <option value="">Select timeline</option>
+                            <option value="asap">ASAP (Start immediately)</option>
+                            <option value="1-week">Within 1 week</option>
+                            <option value="2-weeks">Within 2 weeks</option>
+                            <option value="1-month">Within 1 month</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="inspiration">Any apps that inspire your idea?</label>
+                        <input type="text" id="inspiration" name="inspiration" placeholder="e.g., Instagram + Notion, Uber but for...">
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" style="background: linear-gradient(135deg, #22c55e, #16a34a);">Submit for Review</button>
+                    
+                    <p style="text-align: center; color: #a0a0a0; font-size: 0.9rem; margin-top: 1rem;">
+                        We'll review your idea and send you a detailed proposal within 24 hours
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work With Us Section -->
+    <section id="work-with-us" class="section">
+        <div class="container">
+            <h2 class="section-title">Work With Us</h2>
+            <div class="form-container">
+                <h3 style="text-align: center; margin-bottom: 2rem; color: #ffffff;">Influencer Partnership Program</h3>
+                <p style="text-align: center; color: #a0a0a0; margin-bottom: 2rem;">Join our network of creators and get paid to share our apps with your audience.</p>
+                
+                <form id="influencer-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your full name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="instagram">Instagram Handle</label>
+                        <input type="text" id="instagram" name="instagram" placeholder="@yourinstagram">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="tiktok">TikTok Handle</label>
+                        <input type="text" id="tiktok" name="tiktok" placeholder="@yourtiktok">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="followers">Follower Count</label>
+                        <select id="followers" name="followers" required>
+                            <option value="">Select range</option>
+                            <option value="1k-10k">1K - 10K</option>
+                            <option value="10k-50k">10K - 50K</option>
+                            <option value="50k-100k">50K - 100K</option>
+                            <option value="100k-500k">100K - 500K</option>
+                            <option value="500k+">500K+</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="niche">Content Niche</label>
+                        <input type="text" id="niche" name="niche" placeholder="e.g., wellness, lifestyle, productivity" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Tell us about yourself</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Why would you be a great fit for promoting our apps?"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Apply to Partner Program</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize EmailJS
+        emailjs.init("llXvgOYAB7qbFcZ04");
+
+        // Navigation functionality
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        // EmailJS form submission helper
+        function sendEmail(templateId, formData, successMessage) {
+            emailjs.send("service_sbknwvn", templateId, formData)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert(successMessage);
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    alert('Sorry, there was an error sending your message. Please try again.');
+                });
+        }
+
+        // Form submissions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Influencer form
+            document.getElementById('influencer-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData);
+                
+                // Prepare data for EmailJS
+                const emailData = {
+                    to_email: 'michael@studioeight.app',
+                    from_name: data.name,
+                    from_email: data.email,
+                    subject: 'New Influencer Partnership Application',
+                    message: `
+                        New Influencer Application:
+                        
+                        Name: ${data.name}
+                        Email: ${data.email}
+                        Instagram: ${data.instagram || 'Not provided'}
+                        TikTok: ${data.tiktok || 'Not provided'}
+                        Follower Count: ${data.followers}
+                        Content Niche: ${data.niche}
+                        
+                        About them: ${data.message || 'Not provided'}
+                    `
+                };
+                
+                sendEmail('template_sdxnzgm', emailData, 'Thank you for your application! We\'ll be in touch soon.');
+                this.reset();
+            });
+
+            // MVP form
+            document.getElementById('mvp-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData);
+                
+                // Prepare data for EmailJS
+                const emailData = {
+                    to_email: 'michael@studioeight.app',
+                    from_name: data.name,
+                    from_email: data.email,
+                    subject: 'New App Idea Submission - ' + data.appName,
+                    message: `
+                        New App Idea Submission:
+                        
+                        Client: ${data.name}
+                        Email: ${data.email}
+                        App Name: ${data.appName}
+                        Category: ${data.category}
+                        Timeline: ${data.timeline}
+                        Target Users: ${data.targetUsers}
+                        
+                        Description: ${data.description}
+                        
+                        Inspiration: ${data.inspiration || 'Not provided'}
+                    `
+                };
+                
+                sendEmail('template_eojqqs7', emailData, 'Thank you for submitting your app idea! We\'ll review it and send you a detailed proposal within 24 hours.');
+                this.reset();
+            });
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+            });
+        });
+    </script>
+</body>
+</html>
