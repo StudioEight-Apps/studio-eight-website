@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Whisper</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #FFFCF5;
+            color: #2A2A2A;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .logo {
+            font-family: serif;
+            font-size: 48px;
+            font-weight: 500;
+            font-style: italic;
+            color: #2A2A2A;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #5B5564;
+        }
+
+        .support-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(166, 180, 255, 0.1);
+        }
+
+        .support-card h2 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: #2A2A2A;
+        }
+
+        .support-card p {
+            color: #5B5564;
+            margin-bottom: 12px;
+        }
+
+        .contact-button {
+            display: inline-block;
+            background: #A6B4FF;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 12px;
+            transition: transform 0.2s;
+        }
+
+        .contact-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .faq-item {
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2A2A2A;
+            margin-bottom: 8px;
+        }
+
+        .faq-answer {
+            color: #5B5564;
+        }
+
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .quick-link {
+            background: #f8f8f8;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            color: #2A2A2A;
+            transition: background 0.2s;
+        }
+
+        .quick-link:hover {
+            background: #f0f0f0;
+        }
+
+        .quick-link-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .quick-link-text {
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+            
+            .logo {
+                font-size: 36px;
+            }
+            
+            .support-card {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">whisper</div>
+            <p class="subtitle">Your intelligent journal</p>
+        </div>
+
+        <div class="support-card">
+            <h2>Need Help?</h2>
+            <p>We're here to help! Get in touch with our support team and we'll respond within 24 hours.</p>
+            <a href="mailto:support@whisper-app.com" class="contact-button">Contact Support</a>
+        </div>
+
+        <div class="support-card">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I delete my account?</div>
+                <div class="faq-answer">Go to Settings → Delete Account. You'll be asked to confirm three times before your account and all data are permanently deleted.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How do I cancel my subscription?</div>
+                <div class="faq-answer">Open Settings → Manage Membership, or go to your iPhone Settings → [Your Name] → Subscriptions → Whisper and cancel from there.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Is my journal data private?</div>
+                <div class="faq-answer">Yes! Your journal entries are encrypted and stored securely. We never share or sell your personal data.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can I export my journal entries?</div>
+                <div class="faq-answer">You can view all your past entries in the History tab. For data export requests, contact support@whisper-app.com.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How does the AI work?</div>
+                <div class="faq-answer">Whisper uses advanced AI to understand your reflections and generate personalized mantras that help guide your inner dialogue.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">I found a bug. How do I report it?</div>
+                <div class="faq-answer">Email us at support@whisper-app.com with details about the issue and we'll fix it ASAP!</div>
+            </div>
+        </div>
+
+        <div class="quick-links">
+            <a href="privacy.html" class="quick-link">
+                <div class="quick-link-icon">🔒</div>
+                <div class="quick-link-text">Privacy Policy</div>
+            </a>
+            <a href="terms.html" class="quick-link">
+                <div class="quick-link-icon">📄</div>
+                <div class="quick-link-text">Terms of Service</div>
+            </a>
+            <a href="mailto:support@whisper-app.com" class="quick-link">
+                <div class="quick-link-icon">✉️</div>
+                <div class="quick-link-text">Email Support</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
