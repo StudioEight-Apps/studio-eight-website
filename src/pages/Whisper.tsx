@@ -65,13 +65,13 @@ const Whisper = () => {
         </div>
 
         {/* iPhone Mockup */}
-        <div className="relative z-10 mt-12 md:mt-16 w-full max-w-[360px] md:max-w-[480px] lg:max-w-[560px] overflow-hidden" style={{ maxHeight: '50vh' }}>
+        <div className="relative z-10 mt-12 md:mt-16 w-full max-w-[300px] md:max-w-[360px] lg:max-w-[400px] max-h-[260px] md:max-h-[320px] lg:max-h-[360px] overflow-hidden">
           <img
             src={whisperMockup}
             alt="Whisper app on iPhone"
-            className="w-full h-auto drop-shadow-2xl"
+            className="w-full h-auto"
           />
-          <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#F6F1EA] via-[#F6F1EA]/90 to-transparent pointer-events-none" />
+          <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-[#F6F1EA] via-[#F6F1EA]/80 via-40% to-transparent pointer-events-none" />
         </div>
 
         {/* Gradient fade overlay at the bottom */}
