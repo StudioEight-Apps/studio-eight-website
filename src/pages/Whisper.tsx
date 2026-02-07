@@ -50,14 +50,13 @@ const Whisper = () => {
         </div>
         
         {/* iPhone Mockup - Clean, no background */}
-        <div className="relative z-10 mt-12 md:mt-16 w-full max-w-[320px] md:max-w-[380px] lg:max-w-[420px]">
-          <img 
-            src={whisperMockup} 
-            alt="Whisper app on iPhone" 
+        <div className="relative z-10 mt-12 md:mt-16 w-full max-w-[320px] md:max-w-[380px] lg:max-w-[420px] overflow-hidden" style={{ maxHeight: '55vh' }}>
+          <img
+            src={whisperMockup}
+            alt="Whisper app on iPhone"
             className="w-full h-auto"
           />
-          {/* Bottom fade to blend with background */}
-          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#F6F1EA] to-transparent pointer-events-none" />
+          <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#F6F1EA] via-[#F6F1EA]/80 to-transparent pointer-events-none" />
         </div>
       </section>
 
