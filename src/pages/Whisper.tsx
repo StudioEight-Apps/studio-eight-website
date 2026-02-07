@@ -55,7 +55,7 @@ const Whisper = () => {
         </div>
         
         {/* iPhone Mockup */}
-        <div className="relative z-10 mt-12 md:mt-16 w-full max-w-[300px] md:max-w-[340px] lg:max-w-[380px]">
+        <div className="relative z-10 mt-10 md:mt-14 w-full max-w-[280px] md:max-w-[320px] lg:max-w-[360px] rounded-[2rem] overflow-hidden">
           <img
             src={whisperMockup}
             alt="Whisper app on iPhone"
