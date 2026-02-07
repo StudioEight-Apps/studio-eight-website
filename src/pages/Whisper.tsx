@@ -3,12 +3,17 @@ import whisperMockup from "@/assets/whisper-mockup.png";
 
 const Whisper = () => {
   return (
-    <div className="relative min-h-screen bg-[#F6F1EA]">
+    <div className="relative h-screen overflow-hidden bg-[#F6F1EA]">
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 lg:px-24 py-5 bg-[#F6F1EA]/80 backdrop-blur-md">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <Link to="/whisper" className="font-serif text-xl md:text-2xl font-bold italic text-[#1a1a1a] tracking-tight">Whisper</Link>
-          
+          <div className="flex items-center gap-4">
+            <Link to="/" className="text-sm text-[#1a1a1a]/50 hover:text-[#1a1a1a] transition-colors">
+              ← Studio Eight
+            </Link>
+            <Link to="/whisper" className="font-serif text-xl md:text-2xl font-bold italic text-[#1a1a1a] tracking-tight">Whisper</Link>
+          </div>
+
           <div className="flex items-center gap-6">
             <a href="mailto:support@whisper.io" className="text-[#1a1a1a]/60 text-sm hover:text-[#1a1a1a] transition-colors">
               Support
@@ -24,7 +29,7 @@ const Whisper = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center justify-start pt-32 md:pt-40 px-6 overflow-hidden">
+      <section className="relative h-screen flex flex-col items-center justify-start pt-32 md:pt-40 px-6 overflow-hidden">
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <h1 className="font-serif italic text-4xl md:text-5xl lg:text-6xl font-medium leading-tight tracking-tight text-[#1a1a1a]">
             Your journal that speaks back to you.
@@ -54,21 +59,11 @@ const Whisper = () => {
           <img
             src={whisperMockup}
             alt="Whisper app on iPhone"
-            className="absolute -top-[12%] -left-[10%] w-[120%] max-w-none h-auto"
+            className="absolute -top-[16%] -left-[20%] w-[140%] max-w-none h-auto"
           />
           <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-[#F6F1EA] via-[#F6F1EA]/70 via-30% to-transparent pointer-events-none" />
         </div>
       </section>
-
-      {/* Back to Studio Eight */}
-      <div className="fixed bottom-6 left-6">
-        <Link 
-          to="/" 
-          className="text-sm text-[#1a1a1a]/50 hover:text-[#1a1a1a] transition-colors"
-        >
-          ← Studio Eight
-        </Link>
-      </div>
     </div>
   );
 };
