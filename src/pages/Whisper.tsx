@@ -36,7 +36,7 @@ const Whisper = () => {
           </h1>
 
           <p className="text-lg md:text-xl text-[#1a1a1a]/50 mt-6 md:mt-8 max-w-xl mx-auto">
-            Whisper learns you as you journal and delivers personalized guidance throughout your day.
+            hello from claude
           </p>
 
           <div className="mt-8 md:mt-10">
