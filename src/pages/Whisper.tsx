@@ -54,13 +54,15 @@ const Whisper = () => {
           </div>
         </div>
         
-        {/* iPhone Mockup */}
-        <div className="relative z-10 mt-10 md:mt-14 w-full max-w-[280px] md:max-w-[320px] lg:max-w-[360px] rounded-[2rem] overflow-hidden">
-          <img
-            src={whisperMockup}
-            alt="Whisper app on iPhone"
-            className="w-full h-auto"
-          />
+        {/* iPhone Mockup — CSS frame with screen content image */}
+        <div className="relative z-10 mt-10 md:mt-14 w-[260px] md:w-[300px] lg:w-[340px]">
+          <div className="bg-[#1c1c1e] rounded-[3rem] p-[6px] shadow-xl">
+            <img
+              src={whisperMockup}
+              alt="Whisper app on iPhone"
+              className="w-full h-auto rounded-[2.7rem]"
+            />
+          </div>
           <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-[#F6F1EA] via-[#F6F1EA]/80 via-40% to-transparent pointer-events-none" />
         </div>
       </section>
