@@ -65,7 +65,7 @@ const Whisper = () => {
         </div>
 
         {/* iPhone Mockup - positioned at bottom, cut off halfway */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[280px] md:w-[320px] lg:w-[360px] z-10">
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[65%] w-[280px] md:w-[320px] lg:w-[360px] z-10">
           <img
             src={whisperMockup}
             alt="Whisper app on iPhone"
@@ -74,7 +74,7 @@ const Whisper = () => {
         </div>
 
         {/* Gradient fade overlay at the bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-[40%] bg-gradient-to-t from-[#F6F1EA] via-[#F6F1EA]/80 to-transparent pointer-events-none z-20" />
+        <div className="absolute bottom-0 left-0 right-0 h-[35%] bg-gradient-to-t from-[#F6F1EA] from-30% via-[#F6F1EA]/90 via-60% to-transparent pointer-events-none z-20" />
       </section>
 
       {/* Back to Studio Eight */}
