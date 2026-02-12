@@ -74,11 +74,11 @@ const Whisper = () => {
         </div>
 
         {/* Gradient fade overlay at the bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-[35%] bg-gradient-to-t from-[#F6F1EA] from-30% via-[#F6F1EA]/90 via-60% to-transparent pointer-events-none z-20" />
+        <div className="absolute bottom-0 left-0 right-0 h-[5%] bg-gradient-to-t from-[#F6F1EA]/60 to-transparent pointer-events-none z-20" />
       </section>
 
       {/* Back to Studio Eight */}
-      <div className="fixed bottom-6 left-6 z-30">
+      <div className="fixed top-6 left-6 z-50">
         <Link
           to="/"
           className="text-sm text-[#1a1a1a]/50 hover:text-[#1a1a1a] transition-colors"
