@@ -6,9 +6,11 @@ import Contact from "./pages/Contact";
 import ForBusinesses from "./pages/ForBusinesses";
 import ForCreators from "./pages/ForCreators";
 import OurApps from "./pages/OurApps";
+import Growth from "./pages/Growth";
 import Whisper from "./pages/Whisper";
 import WhisperPrivacy from "./pages/WhisperPrivacy";
 import WhisperTerms from "./pages/WhisperTerms";
+import Based from "./pages/Based";
 import BasedPrivacy from "./pages/BasedPrivacy";
 import BasedTerms from "./pages/BasedTerms";
 import NotFound from "./pages/NotFound";
@@ -25,9 +27,11 @@ const App = () => (
           <Route path="/for-businesses" element={<ForBusinesses />} />
           <Route path="/for-creators" element={<ForCreators />} />
           <Route path="/our-apps" element={<OurApps />} />
+          <Route path="/growth" element={<Growth />} />
           <Route path="/whisper" element={<Whisper />} />
           <Route path="/whisper/privacy" element={<WhisperPrivacy />} />
           <Route path="/whisper/terms" element={<WhisperTerms />} />
+          <Route path="/based" element={<Based />} />
           <Route path="/based/privacy" element={<BasedPrivacy />} />
           <Route path="/based/terms" element={<BasedTerms />} />
           <Route path="*" element={<NotFound />} />
