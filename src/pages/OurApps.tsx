@@ -16,10 +16,10 @@ const OurApps = () => {
           In House
         </p>
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-white text-center leading-[0.95] mb-4 [text-wrap:balance]">
-          We build our own.
+          We bet on ourselves
         </h1>
         <p className="text-sm md:text-base text-white/70 max-w-md text-center leading-relaxed mb-16 md:mb-20 [text-wrap:pretty]">
-          Subscription apps we design, build, and operate from Miami. Every product in our portfolio solves a real problem we care about.
+          Every app here was designed, built, and shipped by our team in Miami — our money, our time, our users on the line.
         </p>
 
         {/* App cards */}
