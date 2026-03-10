@@ -64,11 +64,11 @@ const Contact = () => {
     "w-full bg-transparent border-b border-white/[0.18] py-3 text-sm text-white placeholder:text-white/45 focus:outline-none focus:border-white/60 transition-colors";
 
   return (
-    <div className="min-h-screen bg-black relative">
+    <div className="h-screen bg-black relative overflow-hidden">
       <AnimatedBg />
       <Header />
 
-      <section className="min-h-screen flex flex-col items-center justify-center px-6 py-24 pb-32">
+      <section className="h-full flex flex-col items-center justify-center px-6 pb-[72px] pt-16">
         <div className="w-full max-w-md">
           <p className="text-[10px] tracking-[0.3em] font-medium uppercase text-white/50 mb-6 text-center">
             Contact
@@ -76,7 +76,7 @@ const Contact = () => {
           <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-white text-center mb-2 [text-wrap:balance]">
             Let's work.
           </h1>
-          <p className="text-sm text-white/60 text-center mb-14 [text-wrap:pretty]">
+          <p className="text-sm text-white/60 text-center mb-8 [text-wrap:pretty]">
             Tell us about your project.
           </p>
 
@@ -86,7 +86,7 @@ const Contact = () => {
               <p className="text-sm text-white/50">We'll be in touch soon.</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
               <div className="grid grid-cols-2 gap-6">
                 <input
                   name="name"
@@ -168,7 +168,7 @@ const Contact = () => {
               <textarea
                 name="pitch"
                 required
-                rows={4}
+                rows={3}
                 placeholder="Tell us about your project *"
                 value={formData.pitch}
                 onChange={handleChange}
@@ -178,7 +178,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={status === "submitting"}
-                className="btn-iridescent mt-4 w-full justify-center"
+                className="btn-iridescent mt-2 w-full justify-center"
               >
                 <span>{status === "submitting" ? "Sending..." : "Send message"}</span>
               </button>
