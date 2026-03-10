@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import whisperIcon from "@/assets/whisper-icon.png";
 import moonyIcon from "@/assets/moony-icon.png";
-import blueprintIcon from "@/assets/blueprint-icon.png";
+import basedIcon from "@/assets/based-icon.png";
 import checkupIcon from "@/assets/checkup-icon.png";
 
 interface Product {
@@ -34,12 +34,13 @@ const products: Product[] = [
     isLive: false
   },
   {
-    name: "Blueprint",
-    description: "AI-powered nutrition, fitness tracking, and daily routines built to compound results.",
-    icon: blueprintIcon,
-    statusLabel: "In Development",
-    statusColor: "gray",
-    isLive: false
+    name: "Based",
+    description: "Photograph your meals, track 18 essential nutrients, and get AI coaching to fill your gaps with real food.",
+    icon: basedIcon,
+    statusLabel: "Live on iOS",
+    statusColor: "green",
+    isLive: true,
+    link: "/based"
   },
   {
     name: "Checkup",

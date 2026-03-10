@@ -9,6 +9,8 @@ import OurApps from "./pages/OurApps";
 import Whisper from "./pages/Whisper";
 import WhisperPrivacy from "./pages/WhisperPrivacy";
 import WhisperTerms from "./pages/WhisperTerms";
+import BasedPrivacy from "./pages/BasedPrivacy";
+import BasedTerms from "./pages/BasedTerms";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +28,8 @@ const App = () => (
           <Route path="/whisper" element={<Whisper />} />
           <Route path="/whisper/privacy" element={<WhisperPrivacy />} />
           <Route path="/whisper/terms" element={<WhisperTerms />} />
+          <Route path="/based/privacy" element={<BasedPrivacy />} />
+          <Route path="/based/terms" element={<BasedTerms />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
