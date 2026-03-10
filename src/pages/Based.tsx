@@ -7,11 +7,15 @@ const Based = () => {
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 lg:px-24 py-5 bg-white/80 backdrop-blur-md border-b border-black/[0.04]">
         <div className="max-w-6xl mx-auto flex items-center justify-between relative">
+          <Link to="/" className="text-[#0A0A0A]/40 hover:text-[#0A0A0A] transition-colors z-10">
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+            </svg>
+          </Link>
           <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-3">
             <img src={basedIcon} alt="Based" className="w-8 h-8 rounded-lg" />
             <span className="text-[#0A0A0A] font-semibold text-lg tracking-tight">Based</span>
           </div>
-          <div className="flex-1" />
           <div className="flex items-center gap-6">
             <a href="mailto:support@studioeight.app" className="text-[#0A0A0A]/50 text-sm hover:text-[#0A0A0A] transition-colors hidden sm:block">
               Support
@@ -35,12 +39,7 @@ const Based = () => {
         </div>
       </nav>
 
-      {/* Back to Studio Eight */}
-      <div className="fixed top-6 left-6 z-50">
-        <Link to="/" className="text-sm text-[#0A0A0A]/40 hover:text-[#0A0A0A] transition-colors">
-          ← Studio Eight
-        </Link>
-      </div>
+      {/* Back arrow — inside nav row to avoid overlap */}
 
       {/* ===== HERO SECTION ===== */}
       <section className="relative pt-36 md:pt-44 pb-8 px-6">
@@ -58,13 +57,13 @@ const Based = () => {
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-[3.75rem] font-semibold leading-[1.1] tracking-tight text-[#0A0A0A]">
-            Every nutrient.
+            Cut the slop.
             <br />
-            One photo.
+            Eat Based.
           </h1>
 
           <p className="text-lg md:text-xl text-[#555555] mt-6 md:mt-8 max-w-xl mx-auto leading-relaxed">
-            Snap your meals. Watch 18 vitamin and mineral bars fill in real time. Get a daily grade. No manual logging — ever.
+            Everything your body needs was here before you were. No labs. No additives. No artificial anything. Just whole, earth-based nutrition — tracked with one photo.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 md:mt-10">
@@ -155,11 +154,11 @@ const Based = () => {
       <section className="py-20 md:py-28 px-6 bg-[#F5F5F0]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
-            <p className="text-xs font-medium tracking-[0.15em] uppercase text-[#2D6A2E] mb-3">Real food. Real tracking.</p>
+            <p className="text-xs font-medium tracking-[0.15em] uppercase text-[#2D6A2E] mb-3">Earth-based nutrition</p>
             <h2 className="text-3xl md:text-4xl font-semibold text-[#0A0A0A] tracking-tight">
-              Everything your body needs,
+              Whole food. Zero filler.
               <br className="hidden md:block" />
-              tracked intelligently.
+              Tracked intelligently.
             </h2>
           </div>
 
@@ -173,7 +172,7 @@ const Based = () => {
                   </svg>
                 ),
                 title: "Snap your meals",
-                desc: "Take a photo. AI identifies every ingredient and calculates nutrient content instantly. No typing, no searching, no databases."
+                desc: "Take a photo. AI breaks down every ingredient into 18 vitamins and minerals instantly. No typing, no barcodes, no guessing."
               },
               {
                 icon: (
@@ -182,7 +181,7 @@ const Based = () => {
                   </svg>
                 ),
                 title: "18 nutrient bars",
-                desc: "Watch vitamins, minerals, and macros fill in real time. Get a daily score, letter grade, and streak. Weighted toward your weakest areas."
+                desc: "Watch your vitamins and minerals fill in real time. Daily score, letter grade, and streak — weighted toward what you're actually missing."
               },
               {
                 icon: (
@@ -190,8 +189,8 @@ const Based = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
                   </svg>
                 ),
-                title: "AI coaching",
-                desc: "An AI coach that knows your levels, your history, and your goals — and tells you exactly which whole foods to eat to fix what's missing."
+                title: "Cut the artificial",
+                desc: "AI tells you exactly which whole foods fix your gaps. No pills, no powders, no lab-made garbage. Just real food that's been here for thousands of years."
               },
             ].map((f, i) => (
               <div key={i} className="bg-white rounded-2xl p-8 border border-black/[0.04] shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.06)] transition-shadow">
@@ -242,15 +241,15 @@ const Based = () => {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-semibold text-[#0A0A0A] tracking-tight">
-              The problem is bigger than you think.
+              The supplement industry sold you a lie.
             </h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { stat: "94%", desc: "of adults are deficient in at least one essential nutrient.", color: "#D32F2F" },
-              { stat: "$56B", desc: "spent on supplements yearly — most with fillers and additives.", color: "#F57C00" },
-              { stat: "80%", desc: "of supplement users still have the same deficiencies.", color: "#F57C00" },
+              { stat: "94%", desc: "of adults are deficient in at least one nutrient. The food got worse. The answer isn't a lab.", color: "#D32F2F" },
+              { stat: "$56B", desc: "wasted on supplements packed with fillers, binders, and synthetic garbage your body barely absorbs.", color: "#F57C00" },
+              { stat: "80%", desc: "of supplement users are still deficient. Because pills were never the answer — whole food is.", color: "#F57C00" },
             ].map((s, i) => (
               <div key={i} className="bg-white rounded-2xl p-8 border border-black/[0.04] shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
                 <p className="text-4xl font-bold mb-3" style={{ color: s.color }}>{s.stat}</p>
@@ -313,10 +312,10 @@ const Based = () => {
         <div className="max-w-3xl mx-auto text-center">
           <img src={basedIcon} alt="Based" className="w-16 h-16 rounded-2xl mx-auto mb-8" />
           <h2 className="text-3xl md:text-4xl font-semibold text-white tracking-tight mb-6">
-            Eat what you were meant to.
+            Eat what the earth gave you.
           </h2>
           <p className="text-lg text-white/60 leading-relaxed mb-10 max-w-xl mx-auto">
-            Everything your body needs has been here for thousands of years — just like humans. No supplements. No powders. No pills. Just real food, tracked intelligently.
+            Everything your body needs was here long before labs started manufacturing replacements. Cut the slop. Cut the additives. Cut the artificial. Eat Based.
           </p>
           <a
             href="#"

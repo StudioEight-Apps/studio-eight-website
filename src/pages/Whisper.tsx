@@ -7,6 +7,11 @@ const Whisper = () => {
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 lg:px-24 py-5 bg-[#F6F1EA]/80 backdrop-blur-md">
         <div className="max-w-6xl mx-auto flex items-center justify-between relative">
+          <Link to="/" className="text-[#1a1a1a]/40 hover:text-[#1a1a1a] transition-colors z-10">
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+            </svg>
+          </Link>
           {/* Whisper Logo SVG — centered */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -77,15 +82,6 @@ const Whisper = () => {
         <div className="absolute bottom-0 left-0 right-0 h-[5%] bg-gradient-to-t from-[#F6F1EA]/60 to-transparent pointer-events-none z-20" />
       </section>
 
-      {/* Back to Studio Eight */}
-      <div className="fixed top-6 left-6 z-50">
-        <Link
-          to="/"
-          className="text-sm text-[#1a1a1a]/50 hover:text-[#1a1a1a] transition-colors"
-        >
-          ← Studio Eight
-        </Link>
-      </div>
     </div>
   );
 };
