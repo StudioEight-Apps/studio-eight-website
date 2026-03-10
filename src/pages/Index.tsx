@@ -28,7 +28,7 @@ const Index = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black/60" />
         </div>
-        <div className="flex-1 flex flex-col items-center justify-center px-6 text-center pb-[120px]">
+        <div className="flex-1 flex flex-col items-center justify-center px-6 text-center pb-[120px] bg-black">
           <h1 className="text-3xl font-semibold tracking-tight text-white leading-[1.1] mb-5 [text-wrap:balance]">
             Modern tech for
             <br />
