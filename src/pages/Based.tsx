@@ -6,11 +6,12 @@ const Based = () => {
     <div className="relative min-h-screen bg-white overflow-hidden">
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 lg:px-24 py-5 bg-white/80 backdrop-blur-md border-b border-black/[0.04]">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-3">
+        <div className="max-w-6xl mx-auto flex items-center justify-between relative">
+          <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-3">
             <img src={basedIcon} alt="Based" className="w-8 h-8 rounded-lg" />
             <span className="text-[#0A0A0A] font-semibold text-lg tracking-tight">Based</span>
           </div>
+          <div className="flex-1" />
           <div className="flex items-center gap-6">
             <a href="mailto:support@studioeight.app" className="text-[#0A0A0A]/50 text-sm hover:text-[#0A0A0A] transition-colors hidden sm:block">
               Support
