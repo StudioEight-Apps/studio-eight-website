@@ -24,7 +24,7 @@ const Header = () => {
       </header>
 
       {/* Bottom nav — frosted glass pill */}
-      <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
+      <nav className="fixed bottom-0 left-0 right-0 z-50 flex justify-center pb-2 pt-3 md:pb-6 md:pt-0 md:left-1/2 md:right-auto md:-translate-x-1/2 md:w-auto">
         <div
           className="flex items-center gap-0.5 px-1.5 py-1.5 rounded-full backdrop-blur-xl"
           style={{
