@@ -68,7 +68,7 @@ const Contact = () => {
       <AnimatedBg />
       <Header />
 
-      <section className="min-h-screen flex flex-col items-center justify-center px-6 py-24">
+      <section className="min-h-screen flex flex-col items-center justify-center px-6 py-24 pb-32">
         <div className="w-full max-w-md">
           <p className="text-[10px] tracking-[0.3em] font-medium uppercase text-white/50 mb-6 text-center">
             Contact

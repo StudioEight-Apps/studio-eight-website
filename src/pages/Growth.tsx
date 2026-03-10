@@ -129,7 +129,7 @@ const Growth = () => {
       </section>
 
       {/* CTA */}
-      <section className="px-6 md:px-12 lg:px-24 py-24 lg:py-32 border-t border-white/[0.10]">
+      <section className="px-6 md:px-12 lg:px-24 py-24 pb-32 lg:py-32 border-t border-white/[0.10]">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-2xl md:text-4xl font-semibold text-white tracking-tight mb-4 [text-wrap:balance]">
             Ready to grow?
