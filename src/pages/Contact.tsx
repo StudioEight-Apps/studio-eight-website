@@ -68,15 +68,15 @@ const Contact = () => {
       <AnimatedBg />
       <Header />
 
-      <section className="h-full flex flex-col items-center justify-center px-6 pb-[72px] pt-16">
+      <section className="h-full flex flex-col items-center justify-center px-6 pb-[110px] pt-14">
         <div className="w-full max-w-md">
-          <p className="text-[10px] tracking-[0.3em] font-medium uppercase text-white/50 mb-6 text-center">
+          <p className="text-[10px] tracking-[0.3em] font-medium uppercase text-white/50 mb-4 text-center">
             Contact
           </p>
           <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-white text-center mb-2 [text-wrap:balance]">
             Let's work.
           </h1>
-          <p className="text-sm text-white/60 text-center mb-8 [text-wrap:pretty]">
+          <p className="text-sm text-white/60 text-center mb-6 [text-wrap:pretty]">
             Tell us about your project.
           </p>
 
